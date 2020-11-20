@@ -41,19 +41,27 @@ Le Transaction Control Language
 ### Configuration MySQL
 
 Les fichiers `my.ini` et `my.cnf` servent de global options.
-`defaults-extra-file` ?
-`.mylogin.cnf` : Login path options (:warning: clients only)
-`mysqld-auto.cnf` : System variables persisted with `SET PERSIST` or `SET PERSIST_ONLY` (:warning: server only)
+
+`defaults-extra-file` ?.
+
+`.mylogin.cnf` : Login path options (:warning: clients only).
+
+`mysqld-auto.cnf` : System variables persisted with `SET PERSIST` or `SET PERSIST_ONLY` (:warning: server only).
 
 :warning: La modification de ces fichiers peuvent être critique, faire une sauvegarde de fichier avant toutes modifications.
+
 Workbench permet de modifier également les fichiers de configuration via une interface graphique.
+
 Par défaut la configuration est faite avec le root pour la machine locale. il suffit de se rappeler le mot de passe renseigné pendant l'installation.
+
 Certains paramètres se configurent aussi directement via la ligne de commande et à la volée.
 
 ### Les journaux 
 
 Il y a 6 journaux :
-:warning: sous Windows MySQL n'active aucun log à part `error_log`
+
+:warning: sous Windows MySQL n'active aucun log à part `error_log`.
+
 Pour les activer, modifier le fichier my.ini / my.cnf, redémarrage requis. [more](https://tecadmin.net/enable-logs-in-mysql/)
 
 | Log Type | Information écrite dans les logs |
@@ -99,12 +107,12 @@ GRANT <Privilège> TO <Nom du rôle>;
 -- Assignation d'un rôle à un utilisateur
 GRANT <Nom du rôle> TO <Utilisateur>;
 ```
-On peut remplacer `GRANT` par `REVOKE` si l'on veut révoquer
-![More](https://dev.mysql.com/doc/refman/8.0/en/roles.html)
+On peut remplacer `GRANT` par `REVOKE` si l'on veut révoquer.
+![More](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
 
 ### Types de données
 
-![More](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15)
+![More](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
 
 L'attribut `UNSIGNED` supprime la gestion du signe.
 Exemple : En `TINYINT`, la plage ne sera plus de -127 à 127 mais de 0 à 255.
@@ -132,9 +140,9 @@ Le point in time (avec les binary log) :
 
 mysqlbinlog –stop-position=2000 /binlog/mysql-bin.000012 | mysql -u root -p
 ```
-![More](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)
+![More](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html).
 
-![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html)
+![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
 
 ### Maintenance - index / statistiques
 
@@ -170,12 +178,12 @@ ALTER INDEX [schema.]NomIndex REBUILD [ONLINE];
 ```
 
 ## Ressources
-![Moodle BDD](https://moodle.ynov.com/course/view.php?id=8888)
-![SQL](https://sql.sh)
-![Guest Additions Centos](https://www.tecmint.com/install-virtualbox-guest-additions-on-centos-8/)
-![Activation logs Winoob](https://tecadmin.net/enable-logs-in-mysql/)
-![SQL privilèges/roles](https://dev.mysql.com/doc/refman/8.0/en/roles.html)
-![SQL Types de données](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15)
-![Lock des tables](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html)
-![Point in time](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html)
-![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html)
+![Moodle BDD](https://moodle.ynov.com/course/view.php?id=8888).
+![SQL](https://sql.sh).
+![Guest Additions Centos](https://www.tecmint.com/install-virtualbox-guest-additions-on-centos-8/).
+![Activation logs Winoob](https://tecadmin.net/enable-logs-in-mysql/).
+![SQL privilèges/roles](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
+![SQL Types de données](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
+![Lock des tables](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html).
+![Point in time](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html).
+![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
