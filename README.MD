@@ -16,13 +16,13 @@
 ## Les notions abordés
 
 1. Installation de MySQL (ne sera pas détaillé ici, cf machine/README.md)
-2. [Les interfaces SQL](#les-interfaces-sql)
+2. [Les interfaces SQL](#sql-interface)
 3. [Configuration MySQL](#configuration-mysql)
 4. [Les journaux](#les-journaux)
 5. [Sécurité - Users, privilèges](#s%C3%A9curit%C3%A9---users-et-privil%C3%A8ges)
 6. [Types de données](#types-de-donn%C3%A9es)
 7. [Sauvegarde](#sauvegarde)
-8. [Maintenance - index / statistiques](#maintenance---index--statistiques-maintenance)
+8. [Maintenance - index / statistiques](#maintenance---index--statistiques)
 
 ### SQL interface
 
