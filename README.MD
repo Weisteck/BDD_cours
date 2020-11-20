@@ -1,30 +1,30 @@
 # Admin BDD cours Lyon Ynov - 2020
 
 ## Sommaire
-* [Les dossiers du GIT](#dossier)
-* [Les notions abordés](#notions)
-* [Ressources](#ressource)
-* [Phrase de fin](#fin)
+* [Les dossiers du GIT](#les-dossiers-du-git)
+* [Les notions abordés](#les-notions-abord%C3%A9s)
+* [Ressources](#ressources)
+* [Phrase de fin](#phrase-de-fin)
 
-## Les dossiers du GIT {#dossier}
+## Les dossiers du GIT
 
 * csv : fichiers csv utilisé
 * fichierSQL : scripts SQL utilisé
 * machine : VM utilisé et son installation 
     * à venir un vagrant pour initialiser une machine directement prête
 
-## Les notions abordés {#notions}
+## Les notions abordés
 
-1. [Installation de MySQL (ne sera pas détaillé ici, cf machine/README.md)](#install)
-2. [Les interfaces SQL](#interface)
-3. [Configuration MySQL](#conf)
-4. [Les journaux](#journaux)
-5. [Sécurité - Users, privilèges](#secu)
-6. [Types de données](#types)
+1. Installation de MySQL (ne sera pas détaillé ici, cf machine/README.md)
+2. [Les interfaces SQL](#les-interfaces-sql)
+3. [Configuration MySQL](#configuration-mysql)
+4. [Les journaux](#les-journaux)
+5. [Sécurité - Users, privilèges](#s%C3%A9curit%C3%A9---users-et-privil%C3%A8ges)
+6. [Types de données](#types-de-donn%C3%A9es)
 7. [Sauvegarde](#sauvegarde)
-8. [Maintenance - index / statistiques](#maintenance)
+8. [Maintenance - index / statistiques](#maintenance---index--statistiques-maintenance)
 
-### SQL interface {#interface}
+### SQL interface
 
 #### DML
 
@@ -42,7 +42,7 @@ Le Data Control Language : `GRANT, REVOKE`
 
 Le Transaction Control Language
 
-### Configuration MySQL {#conf}
+### Configuration MySQL
 
 Les fichiers `my.ini` et `my.cnf` servent de global options.
 
@@ -60,7 +60,7 @@ Par défaut la configuration est faite avec le root pour la machine locale. il s
 
 Certains paramètres se configurent aussi directement via la ligne de commande et à la volée.
 
-### Les journaux {#journaux}
+### Les journaux
 
 Il y a 6 journaux :
 
@@ -77,7 +77,7 @@ Pour les activer, modifier le fichier my.ini / my.cnf, redémarrage requis. [mor
 | Slow query log | Les requêtes qui ont pris |
 | DDL Log | Opérations de métadonnées effectuées par les déclarations de DDL |
 
-### Sécurité - Users et privilèges {#secu}
+### Sécurité - Users et privilèges
 
 #### Création d'un utilisateur
 
@@ -114,7 +114,7 @@ GRANT <Nom du rôle> TO <Utilisateur>;
 On peut remplacer `GRANT` par `REVOKE` si l'on veut révoquer.
 ![More](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
 
-### Types de données {#types}
+### Types de données
 
 ![More](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
 
@@ -127,7 +127,7 @@ Les plus utilisés :
 * Texte, chaine de caractère : `VARCHAR()`
 * Date : `DATE`, `DATETIME`
 
-### Sauvegarde {#sauvegarde}
+### Sauvegarde
 
 Pour une sauvegarde global :
 ```sh
@@ -148,7 +148,7 @@ mysqlbinlog –stop-position=2000 /binlog/mysql-bin.000012 | mysql -u root -p
 
 ![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
 
-### Maintenance - index / statistiques {#maintenance}
+### Maintenance - index / statistiques
 
 Création d'un index : 
 ```sql
@@ -181,7 +181,7 @@ OPTIMIZE TABLE nom_table
 ALTER INDEX [schema.]NomIndex REBUILD [ONLINE];
 ```
 
-## Ressources {#ressource}
+## Ressources
 * ![Moodle BDD](https://moodle.ynov.com/course/view.php?id=8888).
 * ![SQL](https://sql.sh).
 * ![Guest Additions Centos](https://www.tecmint.com/install-virtualbox-guest-additions-on-centos-8/).
@@ -194,5 +194,5 @@ ALTER INDEX [schema.]NomIndex REBUILD [ONLINE];
 * ![Cluster](https://www.mysql.com/fr/products/cluster/mysql-cluster-datasheet.fr.pdf)
 * ![SQL trick](https://www.linuxtricks.fr/wiki/print.php?id=248)
 
-## Phrase de fin {#fin}
+## Phrase de fin
 "Tu auras compris que la violence ne résout rien lorsqu'un moustique ce sera poser sur tes couilles."
