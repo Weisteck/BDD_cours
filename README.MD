@@ -1,26 +1,30 @@
 # Admin BDD cours Lyon Ynov - 2020
 
 ## Sommaire
+* [Les dossiers du GIT](#dossier)
+* [Les notions abordés](#notions)
+* [Ressources](#ressource)
+* [Phrase de fin](#fin)
 
-## Les dossiers du GIT
+## Les dossiers du GIT {#dossier}
 
 * csv : fichiers csv utilisé
 * fichierSQL : scripts SQL utilisé
 * machine : VM utilisé et son installation 
     * à venir un vagrant pour initialiser une machine directement prête
 
-## Les notions abordés
+## Les notions abordés {#notions}
 
-1. Installation de MySQL (ne sera pas détaillé ici, cf machine/README.md)
-2. Les interfaces SQL
-3. Configuration MySQL
-4. Les journaux
-5. Sécurité - Users, privilèges
-6. Types de données
-7. Sauvegarde
-8. Maintenance - index / statistiques
+1. [Installation de MySQL (ne sera pas détaillé ici, cf machine/README.md)](#install)
+2. [Les interfaces SQL](#interface)
+3. [Configuration MySQL](#conf)
+4. [Les journaux](#journaux)
+5. [Sécurité - Users, privilèges](#secu)
+6. [Types de données](#types)
+7. [Sauvegarde](#sauvegarde)
+8. [Maintenance - index / statistiques](#maintenance)
 
-### SQL interface
+### SQL interface {#interface}
 
 #### DML
 
@@ -38,7 +42,7 @@ Le Data Control Language : `GRANT, REVOKE`
 
 Le Transaction Control Language
 
-### Configuration MySQL
+### Configuration MySQL {#conf}
 
 Les fichiers `my.ini` et `my.cnf` servent de global options.
 
@@ -56,7 +60,7 @@ Par défaut la configuration est faite avec le root pour la machine locale. il s
 
 Certains paramètres se configurent aussi directement via la ligne de commande et à la volée.
 
-### Les journaux 
+### Les journaux {#journaux}
 
 Il y a 6 journaux :
 
@@ -73,7 +77,7 @@ Pour les activer, modifier le fichier my.ini / my.cnf, redémarrage requis. [mor
 | Slow query log | Les requêtes qui ont pris |
 | DDL Log | Opérations de métadonnées effectuées par les déclarations de DDL |
 
-### Sécurité - Users et privilèges
+### Sécurité - Users et privilèges {#secu}
 
 #### Création d'un utilisateur
 
@@ -110,7 +114,7 @@ GRANT <Nom du rôle> TO <Utilisateur>;
 On peut remplacer `GRANT` par `REVOKE` si l'on veut révoquer.
 ![More](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
 
-### Types de données
+### Types de données {#types}
 
 ![More](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
 
@@ -123,7 +127,7 @@ Les plus utilisés :
 * Texte, chaine de caractère : `VARCHAR()`
 * Date : `DATE`, `DATETIME`
 
-### Sauvegarde
+### Sauvegarde {#sauvegarde}
 
 Pour une sauvegarde global :
 ```sh
@@ -144,7 +148,7 @@ mysqlbinlog –stop-position=2000 /binlog/mysql-bin.000012 | mysql -u root -p
 
 ![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
 
-### Maintenance - index / statistiques
+### Maintenance - index / statistiques {#maintenance}
 
 Création d'un index : 
 ```sql
@@ -177,13 +181,18 @@ OPTIMIZE TABLE nom_table
 ALTER INDEX [schema.]NomIndex REBUILD [ONLINE];
 ```
 
-## Ressources
-![Moodle BDD](https://moodle.ynov.com/course/view.php?id=8888).
-![SQL](https://sql.sh).
-![Guest Additions Centos](https://www.tecmint.com/install-virtualbox-guest-additions-on-centos-8/).
-![Activation logs Winoob](https://tecadmin.net/enable-logs-in-mysql/).
-![SQL privilèges/roles](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
-![SQL Types de données](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
-![Lock des tables](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html).
-![Point in time](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html).
-![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
+## Ressources {#ressource}
+* ![Moodle BDD](https://moodle.ynov.com/course/view.php?id=8888).
+* ![SQL](https://sql.sh).
+* ![Guest Additions Centos](https://www.tecmint.com/install-virtualbox-guest-additions-on-centos-8/).
+* ![Activation logs Winoob](https://tecadmin.net/enable-logs-in-mysql/).
+* ![SQL privilèges/roles](https://dev.mysql.com/doc/refman/8.0/en/roles.html).
+* ![SQL Types de données](https://docs.microsoft.com/fr-fr/sql/odbc/reference/appendixes/sql-data-types?view=sql-server-ver15).
+* ![Lock des tables](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html).
+* ![Point in time](https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html).
+* ![Percona](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html).
+* ![Cluster](https://www.mysql.com/fr/products/cluster/mysql-cluster-datasheet.fr.pdf)
+* ![SQL trick](https://www.linuxtricks.fr/wiki/print.php?id=248)
+
+## Phrase de fin {#fin}
+"Tu auras compris que la violence ne résout rien lorsqu'un moustique ce sera poser sur tes couilles."
