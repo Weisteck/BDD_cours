@@ -12,6 +12,7 @@
 * fichierSQL : scripts SQL utilisé
 * machine : VM utilisé et son installation 
     * à venir un vagrant pour initialiser une machine directement prête
+* DS : tous les fichiers du DS ainsi que sa documentation
 
 ## Les notions abordés
 

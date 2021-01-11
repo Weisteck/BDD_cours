@@ -9,13 +9,13 @@ create table t_compagnie (
 );
 
 create table t_terminal (
-    term_id tinyint unsigned primary key not null,
+    term_id tinyint unsigned primary key not null auto_increment,
     term_code varchar(5) not null,
     term_description varchar(50)
 );
 
 create table t_types_avion (
-    typa_id smallint unsigned primary key not null,
+    typa_id smallint unsigned primary key not null auto_increment,
     typa_immatriculation varchar(10) not null,
     typa_constructeur varchar(50) not null,
     typa_modele varchar(30) not null,
@@ -96,6 +96,8 @@ create table t_modele_avion_vol (
 );
 
 create table t_affectation_avion_vol (
-    aav_id bigint unsigned primary key not null,
-    aav_pp_id int unsigned not null
+    aav_id bigint unsigned primary key not null auto_increment,
+    aav_id_vole bigint unsigned not null,
+    aav_pp_id_employes int unsigned,
+    aav_pp_id_passagers int unsigned
 );

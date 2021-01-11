@@ -25,9 +25,9 @@ add foreign key (mav_id) references t_vol(vol_id),
 add foreign key (mav_typa_id) references t_types_avion(typa_id);
 
 alter table t_affectation_avion_vol
-add foreign key (aav_id) references t_vol(vol_id),
-add foreign key (aav_pp_id) references t_employes(emp_id),
-add foreign key (aav_pp_id) references t_passagers(pass_n_cli);
+add foreign key (aav_id_vole) references t_vol(vol_id),
+add foreign key (aav_pp_id_employes) references t_employes(emp_id),
+add foreign key (aav_pp_id_passagers) references t_passagers(pass_n_cli);
 
 alter table t_compagnie
 add foreign key (comp_pays) references t_pays(pays_id);
