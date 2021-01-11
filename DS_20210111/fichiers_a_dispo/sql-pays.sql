@@ -22,17 +22,17 @@ SET time_zone = "+00:00";
 -- Table structure for table `pays`
 --
 
-CREATE TABLE IF NOT EXISTS `pays` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `code` int(3) NOT NULL,
-  `alpha2` varchar(2) NOT NULL,
-  `alpha3` varchar(3) NOT NULL,
-  `nom_en_gb` varchar(45) NOT NULL,
-  `nom_fr_fr` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `alpha2` (`alpha2`),
-  UNIQUE KEY `alpha3` (`alpha3`),
-  UNIQUE KEY `code_unique` (`code`)
+CREATE TABLE IF NOT EXISTS `t_pays` (
+  `pays_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `pays_code` int(3) NOT NULL,
+  `pays_alpha2` varchar(2) NOT NULL,
+  `pays_alpha3` varchar(3) NOT NULL,
+  `pays_nom_en_gb` varchar(45) NOT NULL,
+  `pays_nom_fr_fr` varchar(45) NOT NULL,
+  PRIMARY KEY (`pays_id`),
+  UNIQUE KEY `pays_alpha2` (`pays_alpha2`),
+  UNIQUE KEY `pays_alpha3` (`pays_alpha3`),
+  UNIQUE KEY `pays_code_unique` (`pays_code`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=242 ;
 
 --
