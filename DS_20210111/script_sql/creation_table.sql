@@ -4,11 +4,12 @@ use aeroport;
 
 create table t_compagnie (
     comp_code_OACI char(3) primary key not null,
-    comp_name varchar(50)
+    comp_name varchar(50),
+    comp_pays smallint(5) unsigned NOT NULL
 );
 
 create table t_terminal (
-    term_id tinyint unsigned primary key not null
+    term_id tinyint unsigned primary key not null,
     term_code varchar(5) not null,
     term_description varchar(50)
 );
@@ -27,7 +28,8 @@ create table t_employes (
     emp_prenom varchar(50) not null,
     emp_sexe tinyint unsigned not null,
     emp_age tinyint unsigned not null,
-    emp_poste tinyint unsigned not null
+    emp_poste tinyint unsigned not null,
+    emp_pays_origine smallint(5) unsigned NOT NULL
 );
 
 create table t_passagers (
@@ -36,7 +38,8 @@ create table t_passagers (
     pass_prenom varchar(50) not null,
     pass_sexe tinyint unsigned not null,
     pass_age tinyint unsigned not null,
-    pass_n_place varchar(10)
+    pass_n_place varchar(10),
+    pass_pays_origine smallint(5) unsigned NOT NULL
 );
 
 create table t_aeroport (
@@ -46,7 +49,7 @@ create table t_aeroport (
     aero_name varchar(80) not null,
     aero_iso_country char(2) not null,
     aero_municipality varchar(40)
-) default auto_increment = 337590 ;
+) auto_increment = 337590 ;
 
 create table t_sexe (
     sex_id tinyint unsigned primary key not null auto_increment,
@@ -82,8 +85,7 @@ create table t_vol (
 );
 
 create table t_vol_detaille (
-    vol_detaille_id bigint unsigned primary key not null,
-    vol_detaille_numero varchar(10) not null,
+    vol_detaille_id bigint unsigned primary key not null auto_increment,
     vol_detaille_comp char(3) not null,
     vol_type tinyint unsigned not null
 );
